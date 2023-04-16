@@ -19,15 +19,15 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class FactoryBeanJavaConfigTest  extends TestCase {
 
     @Autowired
-    private IProcessor IProcessor;
+    private IProcessor iProcessor;
 
     @Resource(name = "&processor")
     private ProcessorFactory processorFactory;
 
     @Test
     public void testConstructWorkerByJava() {
-        assertEquals(IProcessor.isConnected(), false);
-        assertEquals(IProcessor.isReady(), false);
+        assertEquals(iProcessor.isConnected(), false);
+        assertEquals(iProcessor.isReady(), false);
     }
 }
 
