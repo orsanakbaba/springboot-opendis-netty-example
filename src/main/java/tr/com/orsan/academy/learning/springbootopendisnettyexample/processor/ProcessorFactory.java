@@ -8,7 +8,7 @@ public class ProcessorFactory implements FactoryBean<IProcessor> {
     private int processorSTN = 0 ;
     private EntityID entityID;
     @Override
-    public IProcessor getObject() throws Exception {
+    public Processor getObject() throws Exception {
         return new Processor(processorSTN,entityID);
     }
 

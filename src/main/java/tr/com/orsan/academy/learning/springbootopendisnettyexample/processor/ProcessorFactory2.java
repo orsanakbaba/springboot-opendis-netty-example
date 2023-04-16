@@ -1,8 +1,12 @@
 package tr.com.orsan.academy.learning.springbootopendisnettyexample.processor;
 
+import edu.nps.moves.dis7.EntityID;
 import org.springframework.beans.factory.config.AbstractFactoryBean;
 
-public class ProcessorFactory2 extends AbstractFactoryBean<IProcessor> {
+public class ProcessorFactory2 extends AbstractFactoryBean<Processor> {
+
+    private int processorSTN = 0 ;
+    private EntityID entityID;
 
     public ProcessorFactory2() {
         setSingleton(false);
@@ -14,7 +18,7 @@ public class ProcessorFactory2 extends AbstractFactoryBean<IProcessor> {
     }
 
     @Override
-    protected IProcessor createInstance() throws Exception {
-        return new Processor();
+    protected Processor createInstance() throws Exception {
+        return new Processor(processorSTN,entityID);
     }
 }

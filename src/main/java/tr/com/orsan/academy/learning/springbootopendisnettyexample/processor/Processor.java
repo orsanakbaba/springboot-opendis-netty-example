@@ -7,15 +7,12 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Processor implements IProcessor {
-
     private boolean isConnected = false;
     private boolean isReady = false;
     private boolean isAutoStartOnConnect = false;
     private int processorSTN;
     private final EntityID entityID;
     private EntityType entityType;
-
-
     public Processor(int processorSTN , EntityID entityID) {
         this.processorSTN = processorSTN;
         this.entityID = entityID;
@@ -47,7 +44,4 @@ public class Processor implements IProcessor {
     public void setAutoStartOnConnect(boolean isAutoStart){
         this.isAutoStartOnConnect = isAutoStart;
     };
-
-
-
 }
