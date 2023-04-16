@@ -7,12 +7,11 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import tr.com.orsan.academy.learning.springbootopendisnettyexample.processor.Processor;
+import tr.com.orsan.academy.learning.springbootopendisnettyexample.processor.IProcessor;
 import tr.com.orsan.academy.learning.springbootopendisnettyexample.processor.ProcessorBeanFactoryConfig;
 import tr.com.orsan.academy.learning.springbootopendisnettyexample.processor.ProcessorFactory;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -20,15 +19,15 @@ import static org.hamcrest.Matchers.equalTo;
 public class FactoryBeanJavaConfigTest  extends TestCase {
 
     @Autowired
-    private Processor processor;
+    private IProcessor IProcessor;
 
     @Resource(name = "&processor")
     private ProcessorFactory processorFactory;
 
     @Test
     public void testConstructWorkerByJava() {
-        assertEquals(processor.isConnected(), false);
-        assertEquals(processor.isReady(), false);
+        assertEquals(IProcessor.isConnected(), false);
+        assertEquals(IProcessor.isReady(), false);
     }
 }
 

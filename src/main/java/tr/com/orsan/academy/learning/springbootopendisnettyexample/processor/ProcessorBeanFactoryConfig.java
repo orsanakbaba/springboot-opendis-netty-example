@@ -12,7 +12,7 @@ public class ProcessorBeanFactoryConfig {
     }
 
     @Bean
-    public Processor processor() throws Exception {
+    public IProcessor processor() throws Exception {
         return processorFactory().getObject();
     }
 

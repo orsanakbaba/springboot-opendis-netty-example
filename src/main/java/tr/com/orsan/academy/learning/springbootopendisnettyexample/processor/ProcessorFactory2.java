@@ -2,7 +2,7 @@ package tr.com.orsan.academy.learning.springbootopendisnettyexample.processor;
 
 import org.springframework.beans.factory.config.AbstractFactoryBean;
 
-public class ProcessorFactory2 extends AbstractFactoryBean<Processor> {
+public class ProcessorFactory2 extends AbstractFactoryBean<IProcessor> {
 
     public ProcessorFactory2() {
         setSingleton(false);
@@ -14,7 +14,7 @@ public class ProcessorFactory2 extends AbstractFactoryBean<Processor> {
     }
 
     @Override
-    protected Processor createInstance() throws Exception {
+    protected IProcessor createInstance() throws Exception {
         return new Processor();
     }
 }

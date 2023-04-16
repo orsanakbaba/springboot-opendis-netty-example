@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.EntityType;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Processor {
+public class Processor implements IProcessor {
 
     private boolean isConnected = false;
     private boolean isReady = false;
@@ -21,23 +21,29 @@ public class Processor {
         this.entityID = entityID;
     }
 
-    public void setEntityType(EntityType  entityType) {
+    @Override
+    public void setEntityType(EntityType entityType) {
         this.entityType = entityType;
     }
+    @Override
     public void init(InitialConfiguration configuration){
         if (this.isAutoStartOnConnect) {
             this.connect();
         }
     };
+    @Override
     public boolean isReady(){
         return isReady();
     };
+    @Override
     public boolean isConnected(){
         return isConnected;
     };
+    @Override
     public void connect(){
         this.isConnected = true;
     };
+    @Override
     public void setAutoStartOnConnect(boolean isAutoStart){
         this.isAutoStartOnConnect = isAutoStart;
     };
