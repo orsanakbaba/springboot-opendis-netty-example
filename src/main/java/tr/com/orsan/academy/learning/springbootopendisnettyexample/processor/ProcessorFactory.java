@@ -1,13 +1,16 @@
 package tr.com.orsan.academy.learning.springbootopendisnettyexample.processor;
 
+import edu.nps.moves.dis7.EntityID;
 import org.springframework.beans.factory.FactoryBean;
 
 public class ProcessorFactory implements FactoryBean<Processor> {
 
 
+    private int processorSTN = 0 ;
+    private EntityID entityID;
     @Override
     public Processor getObject() throws Exception {
-        return new Processor();
+        return new Processor(processorSTN,entityID);
     }
 
     @Override

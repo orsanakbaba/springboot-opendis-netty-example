@@ -5,8 +5,6 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class ProcessorBeanFactoryConfig {
-
-
     @Bean(name = "Processor")
     public ProcessorFactory processorFactory() {
         ProcessorFactory factory = new ProcessorFactory();
